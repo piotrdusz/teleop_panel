@@ -24,11 +24,11 @@ add_library(${PROJECT_NAME} SHARED
   src/teleop_panel.cpp
 )
 
-ament_target_dependencies(${PROJECT_NAME}
-  geometry_msgs
-  pluginlib
-  rclcpp
-  rviz_common
+target_link_libraries(${PROJECT_NAME} PUBLIC
+  ${geometry_msgs_TARGETS}
+  ${pluginlib_TARGETS}
+  ${rclcpp_TARGETS}
+  ${rviz_common_TARGETS}
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
