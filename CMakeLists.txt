@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.16)
 project(teleop_panel)
 
 if(NOT CMAKE_CXX_STANDARD)
@@ -37,7 +37,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
   ${Qt5Widgets_INCLUDE_DIRS}
 )
 
-target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
+target_link_libraries(${PROJECT_NAME} PUBLIC Qt5::Widgets)
 
 pluginlib_export_plugin_description_file(rviz_common plugin_description.xml)
 
